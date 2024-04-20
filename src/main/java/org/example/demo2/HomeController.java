@@ -13,6 +13,7 @@ public class HomeController {
     public Button customerListButton;
     public Button navigationButton;
     public Button placeOrderButton;
+    public Button logoutButton;
 
     public void onCustomerClicked(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) customerListButton.getScene().getWindow();
@@ -31,6 +32,18 @@ public class HomeController {
         stage.close();
         Stage homeStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("order-view.fxml"));
+        Scene scene = new Scene(
+                fxmlLoader.load());
+        stage.setTitle("ACME");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void onLogoutClicked(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) logoutButton.getScene().getWindow();
+        stage.close();
+        Stage loginStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(
                 fxmlLoader.load());
         stage.setTitle("ACME");
