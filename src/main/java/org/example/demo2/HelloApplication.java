@@ -37,6 +37,7 @@ public class HelloApplication extends Application {
      * @param args Command-line arguments (not used in this application)
      */
     public static void main(String[] args) {
+
         launch();
     }
 }
