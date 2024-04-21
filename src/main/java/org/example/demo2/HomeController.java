@@ -19,7 +19,7 @@ public class HomeController {
         Stage stage = (Stage) customerListButton.getScene().getWindow();
         stage.close();
         Stage homeStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("customer-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("list-customer.fxml"));
         Scene scene = new Scene(
                 fxmlLoader.load());
         stage.setTitle("ACME");
@@ -43,7 +43,7 @@ public class HomeController {
         Stage stage = (Stage) logoutButton.getScene().getWindow();
         stage.close();
         Stage loginStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("customer-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
         Scene scene = new Scene(
                 fxmlLoader.load());
         stage.setTitle("ACME");
