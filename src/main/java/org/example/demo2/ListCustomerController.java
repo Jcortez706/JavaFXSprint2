@@ -1,17 +1,27 @@
 
         package org.example.demo2;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.File;
+
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -26,7 +36,6 @@ public class ListCustomerController implements Initializable {
     @FXML
     public ListView<String> customerListView;
 
-    String[] customer = {"SECO", "LOCAL"};
     String currentCustomer;
 
     /**
@@ -55,6 +64,48 @@ public class ListCustomerController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        String directoryPath = "C:/Users/jacob.cortez/Intellij Projects/demo2/src/main/resources/savedCustomer";
+        File directory = new File(directoryPath);
+        File[] files = directory.listFiles();
+        assert files != null;
+        List<String> customer = new ArrayList<>() {
+        };
+        for (File file : files) {
+            customer.add(file.getName());
+        }
         customerListView.getItems().addAll(customer);
+
+        customerListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                currentCustomer = customerListView.getSelectionModel().getSelectedItem();
+                System.out.println(currentCustomer);
+                try {
+                    createCustomer(new File("C:/Users/jacob.cortez/Intellij Projects/demo2/src/main/resources/savedCustomer/" + currentCustomer));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    private void createCustomer(File file) throws IOException {
+
+        Stage stage = (Stage) addCustomerButton.getScene().getWindow();
+        stage.close();
+
+        Stage loginStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view-customer-view.fxml"));
+        Parent root = fxmlLoader.load();
+
+        ViewCustomerController controller = fxmlLoader.getController();
+
+        controller.readFile(file);
+
+        Scene scene = new Scene(root);
+        loginStage.setTitle(file.getName());
+        loginStage.setScene(scene);
+        loginStage.show();
+
     }
 }
