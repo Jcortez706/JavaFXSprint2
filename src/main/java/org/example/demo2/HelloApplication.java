@@ -3,9 +3,12 @@ package org.example.demo2;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
+
 /**
  * The HelloApplication class represents the main entry point of the application.
  * It extends the JavaFX Application class and overrides the start method to initialize
@@ -27,6 +30,13 @@ public class HelloApplication extends Application {
                 fxmlLoader.load());
         stage.setTitle("ACME");
         stage.setScene(scene);
+        stage.getIcons().add(
+                new Image(
+                        Objects.requireNonNull(
+                                HelloApplication.class.getResourceAsStream("/img.png")
+                        )
+                )
+        );
         stage.show();
     }
 
