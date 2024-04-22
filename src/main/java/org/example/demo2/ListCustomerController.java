@@ -87,8 +87,6 @@ public class ListCustomerController implements Initializable {
                 }
             }
         });
-
-
     }
 
     private void createCustomer(File file) throws IOException {
@@ -100,10 +98,8 @@ public class ListCustomerController implements Initializable {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view-customer-view.fxml"));
         Parent root = fxmlLoader.load();
 
-// Access the controller
         ViewCustomerController controller = fxmlLoader.getController();
 
-// Call a method on the controller to pass the data
         controller.readFile(file);
 
         Scene scene = new Scene(root);
