@@ -104,7 +104,7 @@ public class ListCustomerController implements Initializable {
         ViewCustomerController controller = fxmlLoader.getController();
 
 // Call a method on the controller to pass the data
-        controller.setFile(file);
+        controller.readFile(file);
 
         Scene scene = new Scene(root);
         loginStage.setTitle(file.getName());

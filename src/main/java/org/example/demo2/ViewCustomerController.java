@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ViewCustomerController implements Initializable {
+public class ViewCustomerController{
 
     public Label customerName;
     public Label streetAddress;
@@ -24,36 +24,60 @@ public class ViewCustomerController implements Initializable {
     public Label payment;
     public Label loadingDockCapabilities;
     public Label deliveryConstraints;
-    File loadedFile = null;
+    File loadedFile;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle){
-        if (loadedFile != null) {
-            File file = new File("C:/Users/jacob.cortez/Intellij Projects/demo2/src/main/resources/savedCustomer/" + loadedFile.getName());
-            BufferedReader reader;
-            List<String> customerInfo = new ArrayList<>();
 
-            try {
-                reader = new BufferedReader(new FileReader(file));
-                String line = reader.readLine();
-                while (line != null) {
-                    System.out.println(line);
-                    customerInfo.add(line);
-                    line = reader.readLine();
+    public void readFile(File file) {
+        BufferedReader reader;
+        List<String> customerInfo = new ArrayList<>();
+
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String line = reader.readLine();
+            int count = 0;
+            while (line != null) {
+                System.out.println(line);
+                customerInfo.add(line);
+                switch (count){
+                    case 1:
+                        streetAddress.setText(line);
+                        break;
+                    case 2:
+                        city.setText(line);
+                        break;
+                    case 3:
+                        state.setText(line);
+                        break;
+                    case 4:
+                        zip.setText(line);
+                        break;
+                    case 5:
+                        beerLicense.setText(line);
+                        break;
+                    case 6:
+                        payment.setText(line);
+                        break;
+                    case 7:
+                        loadingDockCapabilities.setText(line);
+                        break;
+                    case 8:
+                        deliveryConstraints.setText(line);
+                        break;
+                    default:
+                        customerName.setText(line);
+                    break;
+
                 }
-                reader.close();
-                if (customerInfo.size() == 9) {
-                    Customer customer = new Customer(customerInfo.get(0), customerInfo.get(1), customerInfo.get(2), customerInfo.get(3), customerInfo.get(4), customerInfo.get(5), customerInfo.get(6), customerInfo.get(7), customerInfo.get(8));
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+                count++;
+                line = reader.readLine();
+
             }
+            reader.close();
+            if (customerInfo.size() == 9) {
+                Customer customer = new Customer(customerInfo.get(0), customerInfo.get(1), customerInfo.get(2), customerInfo.get(3), customerInfo.get(4), customerInfo.get(5), customerInfo.get(6), customerInfo.get(7), customerInfo.get(8));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-}
-
-public void setFile(File file){
-        loadedFile = file;
-}
-
+    }
 }
