@@ -27,7 +27,7 @@ public class OrderController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String userHome = System.getProperty("user.home");
 
-        File directory = new File(userHome + "/savedOrder");
+        File directory = new File(userHome + "/ACME/savedOrder");
         if (!directory.exists()) {
             directory.mkdirs();
         }
