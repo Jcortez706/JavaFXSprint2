@@ -66,7 +66,7 @@ public class ListCustomerController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String userHome = System.getProperty("user.home");
 
-        File directory = new File(userHome + "/savedCustomer");
+        File directory = new File(userHome + "/ACME/savedCustomer");
         if (!directory.exists()) {
             directory.mkdirs();
         }

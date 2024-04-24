@@ -25,9 +25,13 @@ public class OrderController implements Initializable {
     String currentOrder;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        String userHome = System.getProperty("user.home");
 
-        String directoryPath = "C:/Users/jacob.cortez/Intellij Projects/JavaFXSprint2/src/main/resources/savedOrder";
-        File directory = new File(directoryPath);
+        File directory = new File(userHome + "/savedOrder");
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+
         File[] files = directory.listFiles();
         assert files != null;
         List<String> order = new ArrayList<>() {
@@ -42,13 +46,13 @@ public class OrderController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 currentOrder = orderListView.getSelectionModel().getSelectedItem();
                 System.out.println(currentOrder);
-               /* try {
-                    createOrder(new File("C:/Users/jacob.cortez/Intellij Projects/demo2/src/main/resources/savedCustomer/" + currentOrder));
+                try {
+                    createOrder(new File(userHome + "/ACME/savedOrder/" + currentOrder));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
 
-                */
+
             }
         });
     }
@@ -58,10 +62,10 @@ public class OrderController implements Initializable {
             stage.close();
 
             Stage loginStage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view-customer-view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("previous-order.fxml"));
             Parent root = fxmlLoader.load();
 
-            ViewCustomerController controller = fxmlLoader.getController();
+            PreviousOrder controller = fxmlLoader.getController();
 
             controller.readFile(file);
 

@@ -34,7 +34,7 @@ public class CustomerController {
 
     private void SaveCustomer(TextField CN, TextField SA, TextField City, TextField State, TextField Zip, TextField BL, TextField FOP, TextField LDC, TextField DC) {
         String userHome = System.getProperty("user.home");
-        String directoryPath = userHome + "/savedCustomer/";
+        String directoryPath = userHome + "/ACME/savedCustomer";
 
         File directory = new File(directoryPath);
         if (!directory.exists()) {
@@ -43,7 +43,7 @@ public class CustomerController {
         PrintWriter pw = null;
         System.out.println(CN.getText());
         try {
-           File myfile = new File(userHome + "/savedCustomer/" + CN.getText());
+           File myfile = new File(userHome + "/ACME/savedCustomer" + CN.getText());
             pw = new PrintWriter(myfile);
             pw.println(CN.getText());
             pw.println(SA.getText());
