@@ -64,8 +64,12 @@ public class ListCustomerController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String directoryPath = "C:/Users/jacob.cortez/Intellij Projects/demo2/src/main/resources/savedCustomer";
-        File directory = new File(directoryPath);
+        String userHome = System.getProperty("user.home");
+
+        File directory = new File(userHome + "/savedCustomer");
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
         File[] files = directory.listFiles();
         assert files != null;
         List<String> customer = new ArrayList<>() {

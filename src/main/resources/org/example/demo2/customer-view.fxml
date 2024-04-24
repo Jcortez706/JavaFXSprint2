@@ -9,21 +9,21 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="450.0">
                <children>
-                  <TextField layoutX="14.0" layoutY="14.0" promptText="Customer Name" />
-                  <TextField layoutX="14.0" layoutY="47.0" promptText="Street Address" />
-                  <TextField layoutX="14.0" layoutY="80.0" promptText="City" />
-                  <TextField layoutX="14.0" layoutY="113.0" promptText="State" />
-                  <TextField layoutX="14.0" layoutY="146.0" promptText="Zip" />
-                  <TextField layoutX="14.0" layoutY="179.0" promptText="Beer License #" />
-                  <TextField layoutX="14.0" layoutY="212.0" promptText="Form of Payment" />
-                   <TextField layoutX="14.0" layoutY="245.0" promptText="Loading Dock Capabilities" />
-                   <TextField layoutX="14.0" layoutY="278.0" promptText="Delivery Constraints" />
+                  <TextField fx:id="CN" layoutX="14.0" layoutY="14.0" promptText="Customer Name" />
+                  <TextField fx:id="SA" layoutX="14.0" layoutY="47.0" promptText="Street Address" />
+                  <TextField fx:id="City" layoutX="14.0" layoutY="80.0" promptText="City" />
+                  <TextField fx:id="State" layoutX="14.0" layoutY="113.0" promptText="State" />
+                  <TextField fx:id="Zip" layoutX="14.0" layoutY="146.0" promptText="Zip" />
+                  <TextField fx:id="BL" layoutX="14.0" layoutY="179.0" promptText="Beer License #" />
+                  <TextField fx:id="FOP" layoutX="14.0" layoutY="212.0" promptText="Form of Payment" />
+                   <TextField fx:id="LDC" layoutX="14.0" layoutY="245.0" promptText="Loading Dock Capabilities" />
+                   <TextField fx:id="DC" layoutX="14.0" layoutY="278.0" promptText="Delivery Constraints" />
 
                </children></AnchorPane>
 
         </content>
       </ScrollPane>
       <Label alignment="CENTER" layoutX="260.0" layoutY="33.0" text="Add Customer" />
-      <Button layoutX="250.0" layoutY="361.0" mnemonicParsing="false" text="Add Customer" />
+      <Button fx:id="addCustomer" layoutX="250.0" layoutY="361.0" mnemonicParsing="false" text="Add Customer" onAction="#addCustomer"/>
    </children>
 </AnchorPane>
