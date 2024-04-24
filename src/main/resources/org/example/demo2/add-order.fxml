@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.AddOrder">
+   <children>
+      <Label layoutX="256.0" layoutY="31.0" text="Place New Order" />
+      <TextField fx:id="accountID" layoutX="50.0" layoutY="50.0" promptText="Account ID#" />
+       <TextField fx:id="deliveryDate" layoutX="50.0" layoutY="80.0" promptText="Delivery Date mm/dd/yyyy" />
+       <TextField fx:id="salesRepID" layoutX="50.0" layoutY="110.0" promptText="Sales Rep ID" />
+       <TextField fx:id="delvRepID" layoutX="50.0" layoutY="140.0" promptText="Delv Rep ID" />
+       <TextField fx:id="insertItem1" layoutX="50.0" layoutY="170.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem2" layoutX="50.0" layoutY="200.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem3" layoutX="50.0" layoutY="230.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem4" layoutX="50.0" layoutY="260.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem5" layoutX="50.0" layoutY="290.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem6" layoutX="50.0" layoutY="320.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem7" layoutX="50.0" layoutY="350.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem8" layoutX="50.0" layoutY="380.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem9" layoutX="50.0" layoutY="410.0" promptText="Insert Item" />
+       <TextField fx:id="insertItem10" layoutX="50.0" layoutY="440.0" promptText="Insert Item" />
+      <TextField fx:id="quantity1" layoutX="226.0" layoutY="170.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity2" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity3" layoutX="226.0" layoutY="230.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity4" layoutX="226.0" layoutY="260.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity5" layoutX="226.0" layoutY="290.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity6" layoutX="226.0" layoutY="320.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity7" layoutX="226.0" layoutY="350.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity8" layoutX="226.0" layoutY="380.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity9" layoutX="226.0" layoutY="410.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+       <TextField fx:id="quantity10" layoutX="226.0" layoutY="440.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
+      <Button fx:id="placeOrderButton" layoutX="262.0" layoutY="475.0" mnemonicParsing="false" text="Place Order" onAction="#addCustomer" />
+
+
+
+
+
+
+
+
+
+
+
+   </children>
+</AnchorPane>
