@@ -11,9 +11,14 @@ import java.util.List;
 
 public class PreviousOrder {
 
-
+    /** ListView to display previous orders. */
     public ListView previousListView;
 
+    /**
+     * Reads the contents of the given file and populates the ListView with the order information.
+     *
+     * @param file The file containing the order information
+     */
     public void readFile(File file) {
         BufferedReader reader;
         List<String> orderInfo = new ArrayList<>();
@@ -27,9 +32,9 @@ public class PreviousOrder {
                 line = reader.readLine();
             }
             reader.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             previousListView.getItems().addAll(orderInfo);
         }
     }

@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.CustomerController">
+<AnchorPane opacity="0.94" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FF474C; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.CustomerController">
    <children>
       <ScrollPane layoutX="69.0" layoutY="50.0" prefHeight="279.0" prefWidth="452.0">
         <content>
@@ -23,7 +23,7 @@
 
         </content>
       </ScrollPane>
-      <Label alignment="CENTER" layoutX="260.0" layoutY="33.0" text="Add Customer" />
-      <Button fx:id="addCustomer" layoutX="250.0" layoutY="361.0" mnemonicParsing="false" text="Add Customer" onAction="#addCustomer"/>
+      <Label alignment="CENTER" layoutX="260.0" layoutY="33.0" style="-fx-background-color: white;" text="Add Customer" />
+      <Button fx:id="addCustomer" layoutX="250.0" layoutY="361.0" mnemonicParsing="false" onAction="#addCustomer" text="Add Customer" />
    </children>
 </AnchorPane>

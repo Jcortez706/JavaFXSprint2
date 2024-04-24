@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.PreviousOrder">
+<AnchorPane opacity="0.94" style="-fx-background-color: #FF474C; -fx-border-color: #000000;" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.PreviousOrder">
    <children>
       <ListView fx:id="previousListView" layoutX="61.0" layoutY="46.0" prefHeight="308.0" prefWidth="478.0" />
    </children>

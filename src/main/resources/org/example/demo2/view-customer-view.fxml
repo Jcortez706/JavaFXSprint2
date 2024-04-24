@@ -3,10 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.ViewCustomerController">
+<AnchorPane opacity="0.94" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FF474C; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.ViewCustomerController">
    <children>
-      <Label fx:id="customerName" layoutX="286.0" layoutY="31.0" text="customerName" />
+      <Label fx:id="customerName" layoutX="260.0" layoutY="57.0" text="customerName" />
       <Label fx:id="streetAddress" layoutX="90.0" layoutY="85.0" text="Street Address" />
        <Label fx:id="city" layoutX="90.0" layoutY="100.0" text="City" />
        <Label fx:id="state" layoutX="90.0" layoutY="120.0" text="State" />
@@ -15,6 +14,8 @@
        <Label fx:id="payment" layoutX="90.0" layoutY="165.0" text="Payment" />
        <Label fx:id="loadingDockCapabilities" layoutX="90.0" layoutY="180.0" text="Loading Dock Capabilities" />
        <Label fx:id="deliveryConstraints" layoutX="90.0" layoutY="195.0" text="Delivery Constraints" />
+      <TextArea fx:id="textArea" editable="false" layoutX="39.0" layoutY="50.0" prefHeight="324.0" prefWidth="523.0" />
+      <Button fx:id="backButton" onAction="#backButton" layoutX="17.0" layoutY="14.0" mnemonicParsing="false" text="Back" />
 
 
 

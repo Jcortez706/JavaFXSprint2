@@ -1,3 +1,6 @@
+/**
+ * This class handles adding orders in the application.
+ */
 package org.example.demo2;
 
 import javafx.event.ActionEvent;
@@ -13,6 +16,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class AddOrder {
+
+    /**
+     * TextFields for various order details.
+     */
     public TextField accountID;
     public TextField deliveryDate;
     public TextField salesRepID;
@@ -37,8 +44,40 @@ public class AddOrder {
     public TextField quantity8;
     public TextField quantity9;
     public TextField quantity10;
+
+    /**
+     * Button to place the order.
+     */
     public Button placeOrderButton;
 
+    /**
+     * Saves the order details to a file.
+     *
+     * @param accountID    TextField for account ID.
+     * @param deliveryDate TextField for delivery date.
+     * @param salesRepID   TextField for sales representative ID.
+     * @param delvRepID    TextField for delivery representative ID.
+     * @param insertItem1  TextField for item 1.
+     * @param insertItem2  TextField for item 2.
+     * @param insertItem3  TextField for item 3.
+     * @param insertItem4  TextField for item 4.
+     * @param insertItem5  TextField for item 5.
+     * @param insertItem6  TextField for item 6.
+     * @param insertItem7  TextField for item 7.
+     * @param insertItem8  TextField for item 8.
+     * @param insertItem9  TextField for item 9.
+     * @param insertItem10 TextField for item 10.
+     * @param quantity1    TextField for quantity of item 1.
+     * @param quantity2    TextField for quantity of item 2.
+     * @param quantity3    TextField for quantity of item 3.
+     * @param quantity4    TextField for quantity of item 4.
+     * @param quantity5    TextField for quantity of item 5.
+     * @param quantity6    TextField for quantity of item 6.
+     * @param quantity7    TextField for quantity of item 7.
+     * @param quantity8    TextField for quantity of item 8.
+     * @param quantity9    TextField for quantity of item 9.
+     * @param quantity10   TextField for quantity of item 10.
+     */
     public void saveOrder(TextField accountID,
                           TextField deliveryDate,
                           TextField salesRepID,
@@ -96,7 +135,12 @@ public class AddOrder {
 
     }
 
-
+    /**
+     * Handles the event when a customer is added.
+     *
+     * @param actionEvent ActionEvent triggered when the button is clicked.
+     * @throws IOException If an I/O error occurs.
+     */
     public void addCustomer(ActionEvent actionEvent) throws IOException {
 
         saveOrder(

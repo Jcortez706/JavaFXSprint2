@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: White;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.LoginController">
-    <Label fx:id="login"  layoutX="256.0" layoutY="71.0" text="Welcome to ACME" />
+<AnchorPane opacity="0.94" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FF474C; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.LoginController">
+    <Label fx:id="login" layoutX="277.0" layoutY="101.0" style="-fx-background-color: white;" text="ACME">
+      <font>
+         <Font size="17.0" />
+      </font></Label>
     <TextField fx:id="username" layoutX="228.0" layoutY="141.0" promptText="Username" />
     <PasswordField fx:id="password" layoutX="228.0" layoutY="200.0" promptText="Password" />
-   <Button layoutX="276.0" layoutY="250.0" mnemonicParsing="false" prefWidth="58.0" text="Login" onAction="#onLoginButtonClicked"/>
+   <Button layoutX="276.0" layoutY="250.0" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefWidth="58.0" text="Login" />
+   <ImageView fitHeight="79.0" fitWidth="159.0" layoutX="257.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@/img.png" />
+      </image></ImageView>
 </AnchorPane>

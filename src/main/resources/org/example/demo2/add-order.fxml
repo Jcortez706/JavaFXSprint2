@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="514.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.AddOrder">
+<AnchorPane opacity="0.94" prefHeight="514.0" prefWidth="600.0" style="-fx-background-color: #FF474C; -fx-border-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo2.AddOrder">
    <children>
-      <Label layoutX="256.0" layoutY="31.0" text="Place New Order" />
+      <Label layoutX="256.0" layoutY="31.0" style="-fx-background-color: white;" text="Place New Order" />
       <TextField fx:id="accountID" layoutX="50.0" layoutY="50.0" promptText="Account ID#" />
        <TextField fx:id="deliveryDate" layoutX="50.0" layoutY="80.0" promptText="Delivery Date mm/dd/yyyy" />
        <TextField fx:id="salesRepID" layoutX="50.0" layoutY="110.0" promptText="Sales Rep ID" />
@@ -30,7 +30,7 @@
        <TextField fx:id="quantity8" layoutX="226.0" layoutY="380.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
        <TextField fx:id="quantity9" layoutX="226.0" layoutY="410.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
        <TextField fx:id="quantity10" layoutX="226.0" layoutY="440.0" prefHeight="25.0" prefWidth="64.0" promptText="Quantity" />
-      <Button fx:id="placeOrderButton" layoutX="262.0" layoutY="475.0" mnemonicParsing="false" text="Place Order" onAction="#addCustomer" />
+      <Button fx:id="placeOrderButton" layoutX="262.0" layoutY="475.0" mnemonicParsing="false" onAction="#addCustomer" text="Place Order" />
 
 
 

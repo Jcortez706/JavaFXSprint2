@@ -1,5 +1,8 @@
-
-        package org.example.demo2;
+/**
+ * The ListCustomerController class controls the behavior of the list-customer-view.fxml.
+ * It initializes the customer list and handles the action when the add customer button is clicked.
+ */
+package org.example.demo2;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,27 +18,27 @@ import javafx.stage.Stage;
 
 import java.io.BufferedReader;
 import java.io.File;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-/**
- * The ListCustomerController class controls the behavior of the list-customer-view.fxml.
- * It initializes the customer list and handles the action when the add customer button is clicked.
- */
 public class ListCustomerController implements Initializable {
 
+    /** Button to add a customer. */
     @FXML
     public Button addCustomerButton;
 
+    /** ListView to display customer names. */
     @FXML
     public ListView<String> customerListView;
 
+    /** Button to go back to the home view. */
+    public Button backButton;
+
+    /** Currently selected customer. */
     String currentCustomer;
 
     /**
@@ -72,8 +75,7 @@ public class ListCustomerController implements Initializable {
         }
         File[] files = directory.listFiles();
         assert files != null;
-        List<String> customer = new ArrayList<>() {
-        };
+        List<String> customer = new ArrayList<>();
         for (File file : files) {
             customer.add(file.getName());
         }
@@ -85,7 +87,7 @@ public class ListCustomerController implements Initializable {
                 currentCustomer = customerListView.getSelectionModel().getSelectedItem();
                 System.out.println(currentCustomer);
                 try {
-                    createCustomer(new File("C:/Users/jacob.cortez/Intellij Projects/demo2/src/main/resources/savedCustomer/" + currentCustomer));
+                    createCustomer(new File(userHome + "/ACME/savedCustomer/" + currentCustomer));
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -93,6 +95,12 @@ public class ListCustomerController implements Initializable {
         });
     }
 
+    /**
+     * Opens the view-customer-view.fxml and displays the details of the selected customer.
+     *
+     * @param file The file containing the details of the selected customer
+     * @throws IOException If an error occurs while loading the FXML file
+     */
     private void createCustomer(File file) throws IOException {
 
         Stage stage = (Stage) addCustomerButton.getScene().getWindow();
@@ -111,5 +119,23 @@ public class ListCustomerController implements Initializable {
         loginStage.setScene(scene);
         loginStage.show();
 
+    }
+
+    /**
+     * Handles the action when the back button is clicked.
+     * It closes the current window and opens the home-view.fxml.
+     *
+     * @param actionEvent The action event triggered by clicking the back button
+     * @throws IOException If an error occurs while loading the FXML file
+     */
+    public void backHome(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) backButton.getScene().getWindow();
+        stage.close();
+        Stage homeStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("ACME");
+        stage.setScene(scene);
+        stage.show();
     }
 }
