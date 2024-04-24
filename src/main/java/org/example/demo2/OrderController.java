@@ -1,4 +1,75 @@
 package org.example.demo2;
 
-public class OrderController {
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollPane;
+import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class OrderController implements Initializable {
+
+@FXML
+    public ListView<String> orderListView;
+    String currentOrder;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        String directoryPath = "C:/Users/jacob.cortez/Intellij Projects/JavaFXSprint2/src/main/resources/savedOrder";
+        File directory = new File(directoryPath);
+        File[] files = directory.listFiles();
+        assert files != null;
+        List<String> order = new ArrayList<>() {
+        };
+        for (File file : files) {
+            order.add(file.getName());
+        }
+        orderListView.getItems().addAll(order);
+
+        orderListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                currentOrder = orderListView.getSelectionModel().getSelectedItem();
+                System.out.println(currentOrder);
+               /* try {
+                    createOrder(new File("C:/Users/jacob.cortez/Intellij Projects/demo2/src/main/resources/savedCustomer/" + currentOrder));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+                */
+            }
+        });
+    }
+        private void createOrder(File file) throws IOException {
+
+            Stage stage = (Stage) orderListView.getScene().getWindow();
+            stage.close();
+
+            Stage loginStage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("view-customer-view.fxml"));
+            Parent root = fxmlLoader.load();
+
+            ViewCustomerController controller = fxmlLoader.getController();
+
+            controller.readFile(file);
+
+            Scene scene = new Scene(root);
+            loginStage.setTitle(file.getName());
+            loginStage.setScene(scene);
+            loginStage.show();
+
+        }
+
 }
