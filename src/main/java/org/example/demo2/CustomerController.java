@@ -62,6 +62,7 @@ public class CustomerController {
     }
 
     public void addCustomer(ActionEvent actionEvent) {
+
         SaveCustomer(CN, SA, City, State, Zip, BL, FOP, LDC, DC);
     }
 }
