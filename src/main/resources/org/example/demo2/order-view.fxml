@@ -7,6 +7,6 @@
     <children>
         <ListView fx:id="orderListView" layoutX="48.0" layoutY="41.0" prefHeight="323.0" prefWidth="498.0" />
         <Label alignment="CENTER" layoutX="252.0" layoutY="24.0" text="Preview Order List" />
-        <Button layoutX="261.0" layoutY="364.0" mnemonicParsing="false" text="Place Order" />
+        <Button fx:id="placeOrderButton" layoutX="261.0" layoutY="364.0" mnemonicParsing="false" text="Place Order" onAction="#loadPlaceOrderScreen" />
     </children>
 </AnchorPane>
