@@ -2,13 +2,14 @@ package org.example.demo2;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -22,6 +23,7 @@ public class OrderController implements Initializable {
 
 @FXML
     public ListView<String> orderListView;
+    public Button placeOrderButton;
     String currentOrder;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -76,4 +78,14 @@ public class OrderController implements Initializable {
 
         }
 
+    public void loadPlaceOrderScreen(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) placeOrderButton.getScene().getWindow();
+        stage.close();
+        Stage homeStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("add-order.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("ACME");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
